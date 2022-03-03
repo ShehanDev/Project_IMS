@@ -17,18 +17,20 @@ app.use(express.urlencoded({extended:true}))
 //db connection 
 mongoose.connect(process.env.DB_URI,{
     useNewUrlParser:true,
-    useUnifiedTopology:true,
-    //useFindAndModify:true,
-   // useCreateIndex:true
-}).then(()=>{
-    console.log("connected to Database!")
-}).catch((err)=>{
-    console.log(err);
+    useUnifiedTopology:true
+    
+}).then(()=>
+    console.log("connected to Database!")).catch((err)=>{
+    console.log(err);});
 
-});
+
+
+//router prefixes
+app.use('/api/post',require('../server/routes/postRoutes'))
+
 
 
 //start server
-app.listen(() =>  console.log(`server up and Running at http://localhost:${port} `));
+app.listen(port,() =>  console.log(`server up and Running at http://localhost:${port} `));
 
 
