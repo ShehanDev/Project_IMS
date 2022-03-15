@@ -32,7 +32,7 @@ router.post('/',upload,postapi.createPost);
 router.get('/:id',postapi.fetchPostByid);
 
 //update post 
-router.patch('/:id',postapi.updatePostByid);
+router.patch('/:id',upload,postapi.updatePostByid);
 
 //delete post
 router.delete('/:id',postapi.deletePostByid);
