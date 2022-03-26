@@ -54,12 +54,16 @@ module.exports =  class postapi{
             try{
                 fs.unlinkSync("./uploads/"+req.body.old_image);
             }catch(err){
-                console.log(err)
+                console.log("New file error")
+                
             }
         }else{
             //when the imgage not updated
             new_image = req.body.old_image;
         }
+
+        const newPost =req.body;
+        newPost.image = new_image;
 
         try{
             await Post.findByIdAndUpdate(id,newPost);
@@ -68,6 +72,7 @@ module.exports =  class postapi{
 
         }catch(err){
             res.status(404).json({message : err.message})
+            console.log("Error")
 
         }
          

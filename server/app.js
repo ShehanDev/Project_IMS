@@ -26,6 +26,11 @@ mongoose.connect(process.env.DB_URI,{
 
 
 //router prefixes
+
+//login routes
+// app.use('/api/register',require('../server/routes/registerRoutes'))
+
+// //post routes
 app.use('/api/post',require('../server/routes/postRoutes'))
 
 
