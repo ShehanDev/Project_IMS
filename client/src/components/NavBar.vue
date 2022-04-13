@@ -17,10 +17,18 @@
 
         
           <v-navigation-drawer permanent class="cyan darken-4" app>
-                <v-list class=" white--text">
-                  <v-list-item class="px-2">
-                    <v-list-item-avatar >
-                     <v-img src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
+            <div>
+              
+              <v-spaser></v-spaser>
+               <h3 class=" white--text"  align="center" justify="center" >Learn</h3>
+            </div>
+
+              <v-spaser></v-spaser>
+               
+                <v-list class=" white--text" >
+                  <v-list-item class="text-xs-center"   >
+                    <v-list-item-avatar mx-auto max-width="2.5em" class="login-avatar" >
+                      <v-img src="https://randomuser.me/api/portraits/women/85.jpg"  align="center"  ></v-i
                     </v-list-item-avatar>
                   </v-list-item>
 
