@@ -35,7 +35,8 @@ app.use('/api/post',require('../server/routes/postRoutes')),
 
 app.use('/api/student',require('../server/routes/studentRoutes')),
 app.use('/api/lecture',require('../server/routes/lectureRoutes')),
-app.use('/api/book',require('../server/routes/bookRoutes'))
+app.use('/api/book',require('../server/routes/bookRoutes')),
+app.use('/api/course',require('../server/routes/courseRoutes'))
 //start server
 app.listen(port,() =>  console.log(`server up and Running at http://localhost:${port} `));
 
