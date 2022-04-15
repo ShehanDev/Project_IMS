@@ -1,96 +1,53 @@
 <template>
-<v-app id="inspire">
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      dark
+      color="#263238"
+    >
 
-        
-             <v-toolbar flat class ="grey lighten-4 "  height="50" app>
-                 <v-toolbar-title>
-                    <span class="font-weight-dark">Welcome Admin !</span>
+    
+   
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+       <v-toolbar-title>
+                    
                     <v-spacer></v-spacer>
                    </v-toolbar-title>
                 <v-spacer> </v-spacer>
-                <v-btn flat color="teal darken-4">
+                <v-btn flat color="#EF6C00">
                   <span class="white--text">Sign Out</span>
                 </v-btn>
-             </v-toolbar>
-         
-      
 
-        
-          <v-navigation-drawer permanent class="cyan darken-4" app>
-            <div>
-              
-              <v-spaser></v-spaser>
-               <h3 class=" white--text"  align="center" justify="center" >Learn</h3>
-            </div>
+     
+    </v-app-bar>
 
-              <v-spaser></v-spaser>
-               
-                <v-list class=" white--text" >
-                  <v-list-item class="text-xs-center"   >
-                    <v-list-item-avatar mx-auto max-width="2.5em" class="login-avatar" >
-                      <v-img src="https://randomuser.me/api/portraits/women/85.jpg"  align="center"  ></v-img>
-                    </v-list-item-avatar>
-                  </v-list-item>
-
-                  <v-list-item link class=" white--text">
-                    <v-list-item-content  align="center" justify="center">
-                      <v-list-item-title class="text-h6"  align="center" justify="center">
-                        {{username || 'Username'}}
-                      </v-list-item-title>
-                      <v-list-item-subtitle v-on:click="logout" class=" white--text"  align="center" justify="center">Administrator</v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                </v-list>
-
-              <v-divider></v-divider>
-
-              <v-list
-                dense
-                nav
-              >
-                <v-list-item
-                  v-for="item in items"
-                  :key="item.title"
-                  link
-                  class=" white--text"
-                >
-                  <v-list-item-icon>
-                    <v-icon>{{ item.icon }}</v-icon>
-                  </v-list-item-icon>
-
-                  <v-list-item-content>
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-navigation-drawer>
-
-      
-           
-    
-   
-</v-app>
+  
+  
+  </v-app>
 </template>
 
 <script>
   export default {
-    data () {
+    data: () =>{
       return {
-        items: [
-          { title: 'charge', icon: 'mdi-ev-plug-type1' },
-          { title: 'profile', icon: 'mdi-account' },
-          { title: 'Session', icon: 'mdi-menu-open' },
-          { title: 'Payments', icon: 'mdi-credit-card-marker' },
-          { title: 'Notifications', icon: 'mdi-bell' },
-          { title: 'Reports', icon: 'mdi-chart-areaspline' },
-        ],
-        username:this.$route.params.username
-      }
-    },
-    methods: {
-      logout() {
-        this.$router.replace({name:'login'})
+        drawer:false,
+        items:[
+          { title: 'Dashboard', icon: 'mdi-view-dashboard',path:"/dashboard" },
+          { title: 'student', icon: 'mdi-school',path:'/student'},
+          { title: 'Course', icon: 'mdi-folder-multiple-outline' },
+          { title: 'Lectures', icon: 'mdi-human-male-board' },
+          { title: 'Library', icon: 'mdi-book-open-page-variant' },
+          { title: 'My Account', icon: 'mdi-account-box-multiple' },
+        ]
       }
     }
   }
 </script>
+
+<style scoped>
+
+</style>
