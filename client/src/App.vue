@@ -52,7 +52,7 @@
        </v-btn>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="blue-grey lighten-4">
        
       <router-view></router-view>
     </v-main>
