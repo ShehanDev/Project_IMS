@@ -65,7 +65,7 @@
       return {
         drawer:false,
         items:[
-          { title: 'Dashboard', icon: 'mdi-view-dashboard',path:"/dashboard" },
+          { title: 'Dashboard', icon: 'mdi-view-dashboard',path:"/" },
           { title: 'student', icon: 'mdi-school',path:'/student'},
           { title: 'Course', icon: 'mdi-folder-multiple-outline' ,path:"/courses"},
           { title: 'Lectures', icon: 'mdi-human-male-board' ,path:"lectures"},

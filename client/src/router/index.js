@@ -18,7 +18,7 @@ const routes = [
     component: student
   },
   {
-    path: '/dashboard',
+    path: '/',
     name: 'dashboard',
     component: dashboard
   },
